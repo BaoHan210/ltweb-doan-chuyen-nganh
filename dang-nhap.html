@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Đăng nhập vào hệ thống quản lý và phân tích học tập bằng tên đăng nhập hoặc email.">
+  <title>Đăng nhập | Hệ thống quản lý và phân tích học tập</title>
+</head>
+<body>
+  <a href="#noi-dung">Chuyển đến nội dung chính</a>
+
+  <header>
+    <p><a href="index.html">Hệ thống quản lý và phân tích học tập</a></p>
+    <p>Hỗ trợ giáo viên theo dõi và cải thiện kết quả học tập của học sinh</p>
+    <p><a href="dang-nhap.html" aria-current="page">Đăng nhập</a></p>
+  </header>
+
+  <nav aria-label="Menu chính">
+    <ul>
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="danh-sach.html">Danh sách môn học</a></li>
+      <li><a href="chi-tiet.html">Chi tiết bài học</a></li>
+      <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+      <li><a href="lien-he.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <main id="noi-dung">
+    <h1>Đăng nhập</h1>
+
+    <p>Học sinh, giáo viên và quản trị viên đăng nhập bằng tên đăng nhập hoặc email đã được cấp.</p>
+
+    <form action="xu-ly-dang-nhap.php" method="post">
+      <p>
+        <label for="ten-dang-nhap">Tên đăng nhập hoặc email (bắt buộc)</label><br>
+        <input type="text" id="ten-dang-nhap" name="ten-dang-nhap" required minlength="4" maxlength="60" autocomplete="username">
+      </p>
+
+      <p>
+        <label for="mat-khau">Mật khẩu, tối thiểu 8 ký tự (bắt buộc)</label><br>
+        <input type="password" id="mat-khau" name="mat-khau" required minlength="8" autocomplete="current-password">
+      </p>
+
+      <p>
+        <input type="checkbox" id="ghi-nho" name="ghi-nho" value="co">
+        <label for="ghi-nho">Ghi nhớ đăng nhập trên thiết bị này</label>
+      </p>
+
+      <p>
+        <button type="submit">Đăng nhập</button>
+      </p>
+    </form>
+
+    <p>Tài khoản do hệ thống cấp cho từng người dùng để xác định đối tượng có thuộc phạm vi tổ chức đang sử dụng hệ thống hay không. Nếu chưa có tài khoản, bạn hãy <a href="lien-he.html">liên hệ để được hỗ trợ</a>.</p>
+    <p>Quên mật khẩu? Vui lòng liên hệ quản trị viên để đặt lại mật khẩu.</p>
+  </main>
+
+  <footer>
+    <p>© 2026 Đồ án chuyên ngành – Phan Thị Bảo Hân</p>
+  </footer>
+</body>
+</html>
