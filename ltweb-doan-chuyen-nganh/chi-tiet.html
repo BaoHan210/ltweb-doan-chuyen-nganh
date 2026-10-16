@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chi tiết bài học Cấu trúc trang HTML5: mục tiêu, nội dung, sơ đồ bố cục, bảng thông số và video minh họa.">
+  <title>Chi tiết bài học: Cấu trúc trang HTML5 | Hệ thống quản lý và phân tích học tập</title>
+</head>
+<body>
+  <a href="#noi-dung">Chuyển đến nội dung chính</a>
+
+  <header>
+    <p><a href="index.html">Hệ thống quản lý và phân tích học tập</a></p>
+    <p>Hỗ trợ giáo viên theo dõi và cải thiện kết quả học tập của học sinh</p>
+    <p><a href="dang-nhap.html">Đăng nhập</a></p>
+  </header>
+
+  <nav aria-label="Menu chính">
+    <ul>
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="danh-sach.html">Danh sách môn học</a></li>
+      <li><a href="chi-tiet.html" aria-current="page">Chi tiết bài học</a></li>
+      <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+      <li><a href="lien-he.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <main id="noi-dung">
+    <h1>Chi tiết bài học: Cấu trúc trang HTML5</h1>
+
+    <p><a href="danh-sach.html">Quay lại danh sách môn học</a></p>
+
+    <article>
+      <p>Bài học thuộc môn Lập trình web cơ bản (mã MH01). Bài này giới thiệu cách chia một trang web thành các vùng có ý nghĩa rõ ràng bằng các thẻ ngữ nghĩa của HTML5.</p>
+
+      <h2>Mục tiêu học tập</h2>
+      <ul>
+        <li>Phân biệt được vai trò của các thẻ header, nav, main, section, article và footer.</li>
+        <li>Viết được khung HTML5 đầy đủ với khai báo ngôn ngữ, bảng mã và thẻ meta cần thiết.</li>
+        <li>Đặt đúng số lượng thẻ h1 và cây tiêu đề cho một trang.</li>
+      </ul>
+
+      <h2>Nội dung bài học</h2>
+      <p>Trước HTML5, các trang thường dùng nhiều thẻ div với tên lớp tự đặt, khiến máy tìm kiếm và trình đọc màn hình khó hiểu cấu trúc trang. Các thẻ ngữ nghĩa giải quyết vấn đề này vì tên thẻ đã mô tả vai trò của nội dung bên trong.</p>
+
+      <h3>Các thẻ ngữ nghĩa thường dùng</h3>
+      <ul>
+        <li><strong>header</strong>: phần đầu của trang hoặc của một mục nội dung, thường chứa tên website và menu.</li>
+        <li><strong>nav</strong>: nhóm liên kết điều hướng chính.</li>
+        <li><strong>main</strong>: nội dung chính của trang, mỗi trang chỉ có một thẻ main.</li>
+        <li><strong>article</strong>: nội dung độc lập có thể tách ra và đọc riêng, ví dụ một bài viết.</li>
+        <li><strong>footer</strong>: phần cuối của trang, thường chứa thông tin bản quyền và liên hệ.</li>
+      </ul>
+
+      <figure>
+        <img src="images/cau-truc-html5.svg" alt="Sơ đồ bố cục trang HTML5: header ở đầu, nav bên trái, main ở giữa bên phải và footer ở cuối" width="800" height="400">
+        <figcaption>Hình 1. Bố cục trang HTML5 với header, nav, main và footer</figcaption>
+      </figure>
+
+      <h2>Thông số bài học</h2>
+      <table>
+        <caption>Bảng 2. Thông số của bài học Cấu trúc trang HTML5</caption>
+        <thead>
+          <tr>
+            <th scope="col">Thông số</th>
+            <th scope="col">Giá trị</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Thời lượng</th>
+            <td>90 phút</td>
+          </tr>
+          <tr>
+            <th scope="row">Số câu hỏi kèm theo</th>
+            <td>10</td>
+          </tr>
+          <tr>
+            <th scope="row">Mục tiêu liên quan</th>
+            <td>Cấu trúc ngữ nghĩa; khung trang HTML</td>
+          </tr>
+          <tr>
+            <th scope="row">Tỷ lệ học sinh đạt mục tiêu (lớp thử nghiệm)</th>
+            <td>72%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Video minh họa</h2>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video minh họa cách xây dựng cấu trúc trang HTML5" width="560" height="315" loading="lazy" allowfullscreen></iframe>
+
+      <h2>Bài tập tự luyện</h2>
+      <p>Hãy viết một trang HTML5 có đủ header, nav, main và footer. Trong main, dùng ít nhất hai section và một article, mỗi phần có tiêu đề riêng.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 Đồ án chuyên ngành – Phan Thị Bảo Hân</p>
+  </footer>
+</body>
+</html>
