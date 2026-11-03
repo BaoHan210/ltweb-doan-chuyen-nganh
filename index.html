@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trang chủ hệ thống quản lý và phân tích quá trình học tập hỗ trợ giáo viên: quản lý lớp, bài tập, điểm số và phân tích mục tiêu học tập.">
+  <title>Trang chủ | Hệ thống quản lý và phân tích học tập</title>
+  <link rel="stylesheet" href="css/01-bien.css">
+  <link rel="stylesheet" href="css/02-chuan-hoa.css">
+  <link rel="stylesheet" href="css/03-bo-cuc.css">
+  <link rel="stylesheet" href="css/04-thanh-phan.css">
+  <link rel="stylesheet" href="css/05-tien-ich.css">
+</head>
+<body class="trang">
+  <a class="lien-tat" href="#noi-dung">Chuyển đến nội dung chính</a>
+
+  <header class="trang__dau dau">
+    <p class="dau__ten"><a href="index.html">Hệ thống quản lý và phân tích học tập</a></p>
+    <p class="dau__khau-hieu">Hỗ trợ giáo viên theo dõi và cải thiện kết quả học tập của học sinh</p>
+    <p class="dau__dang-nhap"><a href="dang-nhap.html">Đăng nhập</a></p>
+  </header>
+
+  <nav class="trang__menu menu" aria-label="Menu chính">
+    <ul class="menu__danh-sach">
+      <li><a class="menu__lien-ket" href="index.html" aria-current="page">Trang chủ</a></li>
+      <li><a class="menu__lien-ket" href="danh-sach.html">Danh sách môn học</a></li>
+      <li><a class="menu__lien-ket" href="chi-tiet.html">Chi tiết bài học</a></li>
+      <li><a class="menu__lien-ket" href="gioi-thieu.html">Giới thiệu</a></li>
+      <li><a class="menu__lien-ket" href="lien-he.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <main class="trang__chinh" id="noi-dung">
+    <div class="hero">
+      <h1 class="hero__tieu-de">Hệ thống quản lý và phân tích quá trình học tập hỗ trợ giáo viên</h1>
+      <p class="hero__mo-ta">Website giúp giáo viên quản lý lớp học, môn học, bài học, bài tập và bài kiểm tra. Dữ liệu về bài làm và điểm số được ghi nhận có cấu trúc, từ đó phân tích mức độ đạt mục tiêu học tập của từng học sinh và của cả lớp.</p>
+    </div>
+
+    <figure class="hinh">
+      <img class="hinh__anh" src="images/chu-trinh-phan-tich.svg" alt="Sơ đồ vòng lặp bốn bước: đặt mục tiêu, chẩn đoán kết quả, phản hồi và điều chỉnh dạy học, sau đó quay lại bước đặt mục tiêu" width="800" height="240" loading="lazy">
+      <figcaption class="hinh__chu-thich">Hình 1. Chu trình đặt mục tiêu, chẩn đoán, phản hồi và điều chỉnh dạy học</figcaption>
+    </figure>
+
+    <section class="van-ban-dai">
+      <h2>Mục đích</h2>
+      <p>Hệ thống được xây dựng để giảm thời gian giáo viên phải ghi chép điểm số thủ công và để cung cấp thông tin cụ thể hơn về việc học sinh đã đạt những mục tiêu nào. Nhờ đó, giáo viên có thể điều chỉnh nội dung dạy học đúng lúc.</p>
+    </section>
+
+    <section>
+      <h2>Chức năng nổi bật</h2>
+      <div class="luoi-the">
+        <div class="the">
+          <h3 class="the__tieu-de">Quản lý học tập</h3>
+          <p class="the__noi-dung">Giáo viên tạo lớp, phân công môn học, soạn bài học và tải tài liệu lên hệ thống. Học sinh xem bài học, làm bài và nộp bài theo thời hạn.</p>
+        </div>
+        <div class="the">
+          <h3 class="the__tieu-de">Theo dõi kết quả</h3>
+          <p class="the__noi-dung">Hệ thống ghi nhận điểm thường xuyên, điểm giữa kỳ và cuối kỳ, đồng thời lưu nhận xét của giáo viên để học sinh xem lại.</p>
+        </div>
+        <div class="the the--noi-bat">
+          <h3 class="the__tieu-de">Phân tích mục tiêu học tập</h3>
+          <p class="the__noi-dung">Mỗi câu hỏi được gắn với một hoặc nhiều mục tiêu học tập. Giáo viên biết được nội dung nào có nhiều học sinh chưa đạt và cần củng cố.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bắt đầu sử dụng</h2>
+      <ul class="nhom-nut">
+        <li><a class="nut nut--phu" href="danh-sach.html">Xem danh sách môn học và tài liệu công khai</a></li>
+        <li><a class="nut nut--phu" href="gioi-thieu.html">Tìm hiểu về hệ thống và các đối tượng sử dụng</a></li>
+        <li><a class="nut nut--phu" href="lien-he.html">Gửi góp ý, câu hỏi hoặc yêu cầu cấp tài khoản</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="trang__chan chan">
+    <p class="chan__dong">© 2026 Đồ án chuyên ngành – Phan Thị Bảo Hân</p>
+  </footer>
+</body>
+</html>

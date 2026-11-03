@@ -1,0 +1,107 @@
+/* 02-chuan-hoa.css
+   Chuẩn hóa trình duyệt: box-sizing, lề body, ảnh, chữ,
+   liên kết và các trạng thái :hover, :active, :focus-visible. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: var(--khoang-cach);
+}
+
+body {
+  margin: 0;
+  font-family: var(--ho-chu);
+  font-size: var(--co-chu);
+  line-height: var(--do-cao-dong);
+  color: var(--chu);
+  background: var(--nen);
+  overflow-wrap: break-word;
+}
+
+/* Ảnh không bao giờ rộng hơn khung chứa; giữ đúng tỷ lệ */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--khoang-cach);
+  line-height: 1.25;
+  color: var(--mau-chinh);
+  font-weight: var(--do-dam-tieu-de);
+}
+
+h1 {
+  font-size: var(--co-tieu-de-1);
+}
+
+h2 {
+  font-size: var(--co-tieu-de-2);
+  margin-block-start: var(--khoang-lon);
+}
+
+h3 {
+  font-size: var(--co-tieu-de-3);
+  margin-block-start: var(--khoang-cach);
+}
+
+p,
+ul,
+ol,
+figure,
+table,
+fieldset {
+  margin: 0 0 var(--khoang-cach);
+}
+
+ul,
+ol {
+  padding-inline-start: 1.25rem;
+}
+
+/* ----- Liên kết ----- */
+a {
+  color: var(--mau-chinh);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--thoi-gian), background-color var(--thoi-gian);
+}
+
+a:hover {
+  color: var(--mau-chinh-dam);
+  text-decoration-thickness: 2px;
+}
+
+a:active {
+  color: var(--chu);
+  background-color: var(--mau-nhan);
+}
+
+/* Viền focus luôn hiển thị khi dùng bàn phím; không dùng outline: none */
+:focus-visible {
+  outline: 3px solid var(--mau-focus);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--mau-nhan);
+  color: var(--chu);
+}

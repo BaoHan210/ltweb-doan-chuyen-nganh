@@ -1,0 +1,639 @@
+/* 04-thanh-phan.css
+   Thành phần giao diện dùng lại trên nhiều trang.
+   Các cụm bên trong (menu, nhóm nút, chân trang) dàn bằng Flexbox. */
+
+
+/* ==========================================================
+   1. ĐẦU TRANG
+   ========================================================== */
+.dau {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--khoang-cach);
+  padding-block: var(--khoang-cach);
+  background: var(--mau-chinh);
+  color: var(--chu-sang);
+}
+
+.dau a {
+  color: var(--chu-sang);
+}
+
+.dau a:hover {
+  color: var(--mau-nhan);
+}
+
+.dau a:active {
+  color: var(--chu);
+  background-color: var(--mau-nhan);
+}
+
+/* Trên nền tối, viền focus đổi sang vàng để đủ tương phản */
+.dau :focus-visible {
+  outline-color: var(--mau-nhan);
+}
+
+.dau__ten {
+  margin: 0;
+  font-size: var(--co-chu-lon);
+  font-weight: 700;
+}
+
+.dau__ten a {
+  text-decoration: none;
+}
+
+.dau__khau-hieu {
+  margin: 0;
+  flex: 1 1 14rem;
+  font-size: var(--co-chu-nho);
+}
+
+.dau__dang-nhap {
+  margin: 0;
+}
+
+.dau__dang-nhap a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--chu-sang);
+  border-radius: var(--bo-goc-nho);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color var(--thoi-gian), color var(--thoi-gian);
+}
+
+.dau__dang-nhap a:hover {
+  background: var(--chu-sang);
+  color: var(--mau-chinh);
+}
+
+
+/* ==========================================================
+   2. MENU ĐIỀU HƯỚNG
+   Trên điện thoại các mục xuống dòng; không cần nút mở menu
+   vì menu chỉ có 5 mục.
+   ========================================================== */
+.menu {
+  background: var(--mau-nen-phu);
+  border-block-end: 1px solid var(--mau-vien);
+}
+
+.menu__danh-sach {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-nho);
+  margin: 0;
+  padding-block: var(--khoang-nho);
+  list-style: none;
+}
+
+.menu__lien-ket {
+  display: block;
+  min-height: 44px;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--bo-goc-nho);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--thoi-gian), color var(--thoi-gian);
+}
+
+.menu__lien-ket:hover {
+  background: var(--mau-vien);
+  color: var(--mau-chinh-dam);
+  text-decoration: underline;
+}
+
+.menu__lien-ket:active {
+  background: var(--mau-nhan);
+  color: var(--chu);
+}
+
+/* Trang đang mở: đánh dấu bằng aria-current="page" có sẵn trong HTML */
+.menu__lien-ket[aria-current="page"] {
+  background: var(--mau-chinh);
+  color: var(--chu-sang);
+}
+
+.menu__lien-ket[aria-current="page"]:hover {
+  background: var(--mau-chinh-dam);
+  color: var(--chu-sang);
+}
+
+
+/* ==========================================================
+   3. KHU VỰC NỔI BẬT (HERO)
+   ========================================================== */
+.hero {
+  padding: var(--khoang-rat-lon) var(--khoang-lon);
+  margin-block-end: var(--khoang-lon);
+  background: linear-gradient(135deg, var(--mau-chinh), var(--mau-chinh-dam));
+  color: var(--chu-sang);
+  border-radius: var(--bo-goc);
+}
+
+.hero__tieu-de {
+  margin: 0 0 var(--khoang-cach);
+  color: var(--chu-sang);
+}
+
+.hero__mo-ta {
+  max-width: var(--do-dai-dong);
+  margin: 0;
+  font-size: var(--co-chu-lon);
+}
+
+
+/* ==========================================================
+   4. THẺ
+   ========================================================== */
+.the {
+  padding: var(--khoang-lon);
+  background: var(--nen);
+  border: 1px solid var(--mau-vien);
+  border-block-start: 4px solid var(--mau-nhan);
+  border-radius: var(--bo-goc);
+  box-shadow: var(--bong-do);
+  transition: transform var(--thoi-gian), box-shadow var(--thoi-gian);
+}
+
+.the:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(18, 59, 109, 0.2);
+}
+
+.the__tieu-de {
+  margin-block-start: 0;
+}
+
+.the__noi-dung {
+  margin: 0;
+}
+
+/* Thẻ được nhấn mạnh hơn các thẻ còn lại */
+.the--noi-bat {
+  background: var(--mau-nen-phu);
+  border-color: var(--mau-chinh);
+}
+
+
+/* ==========================================================
+   5. NÚT
+   ========================================================== */
+.nut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;                 /* vùng chạm đủ lớn cho ngón tay */
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--mau-chinh);
+  border-radius: var(--bo-goc-nho);
+  background: var(--mau-chinh);
+  color: var(--chu-sang);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--thoi-gian), border-color var(--thoi-gian), color var(--thoi-gian);
+}
+
+.nut:hover {
+  background: var(--mau-chinh-dam);
+  border-color: var(--mau-chinh-dam);
+  color: var(--chu-sang);
+}
+
+.nut:active {
+  background: var(--mau-nhan);
+  border-color: var(--mau-nhan);
+  color: var(--chu);
+}
+
+.nut:focus-visible {
+  outline: 3px solid var(--mau-focus);
+  outline-offset: 2px;
+}
+
+/* Nút phụ: nền trắng, chữ xanh */
+.nut--phu {
+  background: var(--nen);
+  color: var(--mau-chinh);
+}
+
+.nut--phu:hover {
+  background: var(--mau-nen-phu);
+  border-color: var(--mau-chinh-dam);
+  color: var(--mau-chinh-dam);
+}
+
+.nut--phu:active {
+  background: var(--mau-nhan);
+  border-color: var(--mau-nhan);
+  color: var(--chu);
+}
+
+/* Nhóm nút hoặc nhóm liên kết dạng nút: Flexbox, tự xuống dòng */
+.nhom-nut {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-cach);
+  margin: 0 0 var(--khoang-lon);
+  padding: 0;
+  list-style: none;
+}
+
+
+/* ==========================================================
+   6. BIỂU MẪU
+   ========================================================== */
+.bieu-mau__nhom {
+  margin: 0 0 var(--khoang-lon);
+  padding: var(--khoang-cach);
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+}
+
+.bieu-mau__chu-thich {
+  padding: 0 var(--khoang-nho);
+  font-size: var(--co-chu-lon);
+  font-weight: 700;
+  color: var(--mau-chinh);
+}
+
+.bieu-mau__truong {
+  margin: 0 0 var(--khoang-cach);
+}
+
+.bieu-mau__truong > br {
+  display: none;
+}
+
+/* Nhóm radio giữ xuống dòng giữa các lựa chọn */
+.bieu-mau__truong--lua-chon > br {
+  display: inline;
+}
+
+.bieu-mau__nhan {
+  display: block;
+  margin-block-end: var(--khoang-nho);
+  font-weight: 600;
+}
+
+.bieu-mau__o {
+  display: block;
+  width: 100%;
+  max-width: 34rem;
+  padding: 0.6rem 0.75rem;
+  font-size: var(--co-chu);
+  color: var(--chu);
+  background: var(--nen);
+  border: 2px solid var(--mau-vien-dam);
+  border-radius: var(--bo-goc-nho);
+  transition: border-color var(--thoi-gian), box-shadow var(--thoi-gian);
+}
+
+.bieu-mau__o:hover {
+  border-color: var(--mau-chinh);
+}
+
+.bieu-mau__o:focus-visible {
+  outline: 3px solid var(--mau-focus);
+  outline-offset: 2px;
+  border-color: var(--mau-chinh);
+}
+
+.bieu-mau__o--dai {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.bieu-mau__lua-chon {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0 0.4rem 0 0;
+  vertical-align: middle;
+  accent-color: var(--mau-chinh);
+}
+
+.bieu-mau__lua-nhan {
+  display: inline;
+  cursor: pointer;
+}
+
+/* Hàng đồng ý: ô đánh dấu và chữ nằm ngang hàng */
+.bieu-mau__truong--dong-y {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bieu-mau__hanh-dong {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-cach);
+  margin-block: var(--khoang-lon);
+}
+
+
+/* ==========================================================
+   7. Ô TÌM KIẾM
+   ========================================================== */
+.tim-kiem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--khoang-nho);
+  margin-block-end: var(--khoang-lon);
+}
+
+.tim-kiem__truong {
+  flex: 1 1 16rem;
+  margin: 0;
+}
+
+.tim-kiem__truong > br {
+  display: none;
+}
+
+
+/* ==========================================================
+   8. BẢNG
+   Bảng thường dùng trên máy tính. Bảng có thêm lớp
+   .bang--xep-chong thì trên điện thoại mỗi hàng thành một khối.
+   ========================================================== */
+.bang {
+  width: 100%;
+  margin: 0 0 var(--khoang-lon);
+  border-collapse: collapse;
+  background: var(--nen);
+}
+
+.bang caption {
+  caption-side: top;
+  padding-block-end: var(--khoang-nho);
+  font-weight: 700;
+  text-align: left;
+  color: var(--mau-chinh);
+}
+
+.bang th,
+.bang td {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--mau-vien);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bang thead th {
+  background: var(--mau-chinh);
+  color: var(--chu-sang);
+}
+
+.bang tbody th {
+  background: var(--mau-nen-phu);
+}
+
+/* ----- Mặc định: điện thoại, mỗi hàng là một khối xếp dọc ----- */
+.bang--xep-chong,
+.bang--xep-chong tbody,
+.bang--xep-chong tr,
+.bang--xep-chong th,
+.bang--xep-chong td {
+  display: block;
+  width: 100%;
+}
+
+.bang--xep-chong caption {
+  display: block;
+  padding-block-end: var(--khoang-cach);
+}
+
+/* Tiêu đề cột vẫn có trong HTML cho trình đọc màn hình, nhưng ẩn khỏi màn hình */
+.bang--xep-chong thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.bang--xep-chong tr {
+  margin-block-end: var(--khoang-cach);
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  background: var(--nen);
+  overflow: hidden;
+}
+
+.bang--xep-chong th,
+.bang--xep-chong td {
+  border: 0;
+  border-block-end: 1px solid var(--mau-vien);
+}
+
+.bang--xep-chong tr > :last-child {
+  border-block-end: 0;
+}
+
+.bang--xep-chong td::before {
+  display: block;
+  font-size: var(--co-chu-nho);
+  font-weight: 700;
+  color: var(--mau-chinh);
+}
+
+/* Nhãn cho từng ô của bảng danh sách môn học */
+.bang--danh-sach td:nth-of-type(1)::before { content: "Tên"; }
+.bang--danh-sach td:nth-of-type(2)::before { content: "Loại"; }
+.bang--danh-sach td:nth-of-type(3)::before { content: "Số bài học"; }
+.bang--danh-sach td:nth-of-type(4)::before { content: "Cập nhật gần nhất"; }
+.bang--danh-sach td:nth-of-type(5)::before { content: "Liên kết"; }
+
+/* ----- Từ 600px: bảng hiển thị bình thường, không xếp chồng ----- */
+@media (min-width: 600px) {
+  .bang--xep-chong {
+    display: table;
+  }
+
+  .bang--xep-chong caption {
+    display: table-caption;
+  }
+
+  .bang--xep-chong thead {
+    display: table-header-group;
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .bang--xep-chong tbody {
+    display: table-row-group;
+  }
+
+  .bang--xep-chong tr {
+    display: table-row;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    overflow: visible;
+  }
+
+  .bang--xep-chong th,
+  .bang--xep-chong td {
+    display: table-cell;
+    width: auto;
+    border: 1px solid var(--mau-vien);
+  }
+
+  .bang--xep-chong thead th {
+    background: var(--mau-chinh);
+    color: var(--chu-sang);
+  }
+
+  .bang--xep-chong td:nth-of-type(n)::before,
+  .bang--xep-chong td::before {
+    content: none;
+  }
+}
+
+
+/* ==========================================================
+   9. HÌNH MINH HỌA
+   ========================================================== */
+.hinh {
+  margin: 0 0 var(--khoang-lon);
+}
+
+.hinh__anh {
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  background: var(--mau-nen-phu);
+}
+
+.hinh__chu-thich {
+  margin-block-start: var(--khoang-nho);
+  font-size: var(--co-chu-nho);
+  color: var(--chu-phu);
+  text-align: center;
+}
+
+/* Khung nhúng video: co theo chiều rộng, giữ tỷ lệ 16:9 */
+.video-nhung {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--bo-goc);
+}
+
+
+/* ==========================================================
+   10. PHÂN TRANG
+   ========================================================== */
+.phan-trang {
+  margin-block: var(--khoang-lon);
+}
+
+.phan-trang__danh-sach {
+  margin: 0;
+}
+
+.phan-trang__muc {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--bo-goc-nho);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.phan-trang__muc[aria-current="page"] {
+  background: var(--mau-chinh);
+  color: var(--chu-sang);
+}
+
+
+/* ==========================================================
+   11. KHỐI PHỤ (CỘT BÊN)
+   ========================================================== */
+.cot-phu {
+  padding: var(--khoang-cach);
+  margin-block: var(--khoang-lon);
+  background: var(--mau-nen-phu);
+  border-radius: var(--bo-goc);
+  border-inline-start: 4px solid var(--mau-nhan);
+}
+
+.cot-phu__tieu-de {
+  margin-block-start: 0;
+  font-size: var(--co-tieu-de-3);
+}
+
+.cot-phu__danh-sach {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cot-phu__muc {
+  margin-block-end: var(--khoang-nho);
+}
+
+
+/* ==========================================================
+   12. DANH SÁCH THÀNH VIÊN VÀ KHỐI VĂN BẢN DÀI
+   ========================================================== */
+.thanh-vien {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-cach);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thanh-vien__muc {
+  flex: 1 1 16rem;
+  padding: var(--khoang-cach);
+  border: 1px solid var(--mau-vien);
+  border-radius: var(--bo-goc);
+  background: var(--nen);
+}
+
+/* Đoạn văn dài giới hạn độ rộng dòng để dễ đọc */
+.van-ban-dai {
+  max-width: var(--do-dai-dong);
+}
+
+
+/* ==========================================================
+   13. CHÂN TRANG
+   ========================================================== */
+.chan {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--khoang-nho);
+  padding-block: var(--khoang-lon);
+  background: var(--mau-nen-phu);
+  border-block-start: 1px solid var(--mau-vien);
+  font-size: var(--co-chu-nho);
+  text-align: center;
+}
+
+.chan__dong {
+  margin: 0;
+}

@@ -1,0 +1,30 @@
+# IDE và hệ điều hành
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File tạm
+*.tmp
+*.log
+*.bak
+*~
+
+# File cấu hình chứa thông tin bí mật
+.env
+.env.*
+!.env.example
+
+# Dependencies và dữ liệu sinh tự động
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+
+# File nén và bản sao lưu
+*.zip
+*.rar
+*.7z
+*.bak
