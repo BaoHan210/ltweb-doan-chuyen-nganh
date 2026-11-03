@@ -1,0 +1,44 @@
+/* bootstrap-tuy-bien.css
+   Nạp SAU bootstrap.min.css. Chỉ đổi màu chính của Bootstrap
+   sang màu xanh đậm của website (cùng màu --mau-chinh trong 01-bien.css).
+
+   Lưu ý: Bootstrap 5.3 đặt màu nút và liên kết bằng biến cục bộ,
+   nên phải ghi đè cả --bs-primary-rgb (dùng cho bg-primary, text-bg-primary). */
+
+:root {
+  --bs-primary: #123b6d;
+  --bs-primary-rgb: 18, 59, 109;
+  --bs-link-color: #123b6d;
+  --bs-link-color-rgb: 18, 59, 109;
+  --bs-link-hover-color: #0b2747;
+  --bs-link-hover-color-rgb: 11, 39, 71;
+}
+
+.btn-primary {
+  --bs-btn-bg: #123b6d;
+  --bs-btn-border-color: #123b6d;
+  --bs-btn-hover-bg: #0b2747;
+  --bs-btn-hover-border-color: #0b2747;
+  --bs-btn-active-bg: #0b2747;
+  --bs-btn-active-border-color: #0b2747;
+  --bs-btn-disabled-bg: #123b6d;
+  --bs-btn-disabled-border-color: #123b6d;
+  --bs-btn-focus-shadow-rgb: 18, 59, 109;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #123b6d;
+  --bs-btn-border-color: #123b6d;
+  --bs-btn-hover-bg: #123b6d;
+  --bs-btn-hover-border-color: #123b6d;
+  --bs-btn-active-bg: #0b2747;
+  --bs-btn-active-border-color: #0b2747;
+  --bs-btn-focus-shadow-rgb: 18, 59, 109;
+}
+
+.pagination {
+  --bs-pagination-color: #123b6d;
+  --bs-pagination-active-bg: #123b6d;
+  --bs-pagination-active-border-color: #123b6d;
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(18, 59, 109, 0.25);
+}

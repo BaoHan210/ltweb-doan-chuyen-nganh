@@ -1,0 +1,114 @@
+/* ca-nhan.css
+   Định kiểu riêng cho trang giới thiệu cá nhân.
+   Dùng lại biến và thành phần chung từ ../../css/01 đến 05. */
+
+
+/* ----------------------------------------------------------
+   1. Ảnh chân dung: co giãn theo khung cố định, cắt bằng object-fit
+   ---------------------------------------------------------- */
+.ca-nhan__anh {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--mau-nhan);
+  border-radius: var(--bo-goc);
+}
+
+
+/* ----------------------------------------------------------
+   2. Khối giới thiệu bản thân
+   Mặc định: ảnh, đoạn văn và danh sách xếp dọc.
+   Từ 768px: ảnh bên trái, chữ bên phải (Grid).
+   ---------------------------------------------------------- */
+.ca-nhan__gioi-thieu {
+  display: grid;
+  gap: var(--khoang-cach);
+}
+
+.ca-nhan__gioi-thieu > h2 {
+  margin-block-start: 0;
+}
+
+.ca-nhan__gioi-thieu > figure {
+  margin: 0;
+}
+
+.ca-nhan__thong-tin {
+  list-style: none;
+  border-inline-start: 4px solid var(--mau-chinh);
+  padding-inline-start: var(--khoang-cach);
+}
+
+.ca-nhan__thong-tin li {
+  margin-block-end: var(--khoang-nho);
+}
+
+@media (min-width: 768px) {
+  .ca-nhan__gioi-thieu {
+    grid-template-columns: 220px minmax(0, 1fr);
+    column-gap: var(--khoang-lon);
+    align-items: start;
+  }
+
+  .ca-nhan__gioi-thieu > h2 {
+    grid-column: 1 / -1;
+  }
+
+  .ca-nhan__gioi-thieu > figure {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+  }
+
+  .ca-nhan__gioi-thieu > p {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .ca-nhan__gioi-thieu > .ca-nhan__thong-tin {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   3. Kỹ năng: dạng thẻ nhỏ, Flexbox tự xuống dòng
+   ---------------------------------------------------------- */
+.ca-nhan__ky-nang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--khoang-nho);
+  padding: 0;
+  list-style: none;
+}
+
+.ca-nhan__ky-nang li {
+  flex: 1 1 16rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--mau-nen-phu);
+  border: 1px solid var(--mau-vien);
+  border-inline-start: 4px solid var(--mau-nhan);
+  border-radius: var(--bo-goc-nho);
+}
+
+
+/* ----------------------------------------------------------
+   4. Bảng thời khóa biểu
+   Trên điện thoại: mỗi tiết là một khối, mỗi ô có nhãn "Thứ ...".
+   Nhãn được viết theo vị trí cột (td thứ 1 đến 5).
+   ---------------------------------------------------------- */
+.bang--thoi-khoa-bieu td:nth-of-type(1)::before { content: "Thứ 2: "; }
+.bang--thoi-khoa-bieu td:nth-of-type(2)::before { content: "Thứ 3: "; }
+.bang--thoi-khoa-bieu td:nth-of-type(3)::before { content: "Thứ 4: "; }
+.bang--thoi-khoa-bieu td:nth-of-type(4)::before { content: "Thứ 5: "; }
+.bang--thoi-khoa-bieu td:nth-of-type(5)::before { content: "Thứ 6: "; }
+
+/* Từ 600px bảng giữ dạng bảng, không cần nhãn */
+@media (min-width: 600px) {
+  .bang--thoi-khoa-bieu td:nth-of-type(n)::before {
+    content: none;
+  }
+}
